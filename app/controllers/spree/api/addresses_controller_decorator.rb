@@ -51,6 +51,6 @@ Spree::Api::AddressesController.class_eval do
 
   private
   def address_params
-    params.require(:address).permit(:first_name, :last_name, :phone, :address1, :district, :user_id, :title)
+    params.require(:address).permit(:first_name, :last_name, :phone, :address1, :district, :city, :user_id, :title)
   end
 end
