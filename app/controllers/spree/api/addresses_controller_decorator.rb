@@ -35,10 +35,10 @@ Spree::Api::AddressesController.class_eval do
 
   def destroy
     @address = Spree::Address.find(params[:id])
-    if @address.destroy
-      @status = [ { "messages" => "Address was successfully destroyed"}]
+    @status = if @address.destroy
+      [{ "messages" => "Address was successfully destroyed" }]
     else
-      @status = [ { "messages" => "Address was not successfully destroyed"}]
+      [{ "messages" => "Address was not successfully destroyed" }]
     end
     render "spree/api/logger/log"
   end
